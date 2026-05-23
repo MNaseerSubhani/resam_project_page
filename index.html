@@ -1,379 +1,258 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta name="description" content="ReSAM: Refine, Requery, and Reinforce — point-supervised self-prompting segmentation for remote sensing images (CVPR 2026).">
+  <meta property="og:title" content="ReSAM | CVPR 2026"/>
+  <meta property="og:description" content="Self-prompting point-supervised segmentation for remote sensing with SAM. Refine–Requery–Reinforce (R³) loop and Soft Semantic Alignment."/>
+  <meta property="og:url" content="https://mnaseersubhani.github.io/ReSAM/"/>
+  <meta property="og:image" content="static/images/method.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:title" content="ReSAM | CVPR 2026">
+  <meta name="twitter:description" content="Point-supervised self-prompting SAM adaptation for remote sensing imagery.">
+  <meta name="twitter:image" content="static/images/method.png">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="keywords" content="ReSAM, SAM, remote sensing, point supervision, CVPR 2026, segmentation, self-prompting">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
-  <title>ReSAM-CVPR2026</title>
+  <title>ReSAM | CVPR 2026</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-	    tex2jax: {
-	        inlineMath: [['$','$'], ['\\(','\\)']],
-	        processEscapes: true
-	    }
-	});
-    </script>
-  <script src="static/js/index.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
 </head>
 <body>
-
 
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="xtitle is-1 publication-title">ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images</h1>
+            <h1 class="xtitle publication-title">ReSAM: Refine, Requery, and Reinforce — Self-Prompting Point-Supervised Segmentation for Remote Sensing Images</h1>
             <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">M.Naseer Subhani</a><sup>*</sup></span>
-                <!-- <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup></span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div> -->
+                <a href="https://github.com/MNaseerSubhani" target="_blank" rel="noopener">Muhammad Naseer Subhani</a>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Independent Researcher</span>
+              <span class="venue-badge">CVPR 2026</span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Independent Researcher<br>CVPR 2026</span>
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2511.21606" target="_blank"
-                        class="external-link ">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                   
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/MNaseerSubhani/ReSAM" target="_blank"
-                    class="external-link ">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2511.21606" target="_blank" rel="noopener" class="external-link">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/MNaseerSubhani/ReSAM" target="_blank" rel="noopener" class="external-link">
+                    <span class="icon"><i class="fab fa-github"></i></span>
                     <span>Code</span>
                   </a>
                 </span>
-
-                <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/2511.21606" target="_blank"
-                  class="external-link ">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-
-                   <!-- Supplementary PDF link -->
-                   <span class="link-block">
-                    <a href="https://colab.research.google.com/drive/12RtZknvF2JwVtjWMW4MfyjE7buQSO9_x?usp=drive_link" target="_blank"
-                    class="external-link ">
-                    <span class="icon">
-                      <i class="fas  fa-play-circle"></i>
-                    </span>
-                    <span>Colab Demo</span>
+                  <a href="https://arxiv.org/abs/2511.21606" target="_blank" rel="noopener" class="external-link">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span>
+                    <span>arXiv</span>
                   </a>
                 </span>
-                </a>
-              </span>
+                <span class="link-block">
+                  <a href="https://colab.research.google.com/drive/12RtZknvF2JwVtjWMW4MfyjE7buQSO9_x?usp=drive_link" target="_blank" rel="noopener" class="external-link">
+                    <span class="icon"><i class="fas fa-play-circle"></i></span>
+                    <span>Colab</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://huggingface.co/spaces/naseer39/ReSAM-app" target="_blank" rel="noopener" class="external-link">
+                    <span class="icon"><i class="fas fa-rocket"></i></span>
+                    <span>Demo</span>
+                  </a>
+                </span>
+              </div>
+
+              <div class="qr-grid">
+                <div class="qr-card">
+                  <a href="https://arxiv.org/abs/2511.21606" target="_blank" rel="noopener">
+                    <img src="qr_codes/arxiv_qr.png" alt="QR code for arXiv paper">
+                  </a>
+                  <p>arXiv</p>
+                </div>
+                <div class="qr-card">
+                  <a href="https://colab.research.google.com/drive/12RtZknvF2JwVtjWMW4MfyjE7buQSO9_x?usp=drive_link" target="_blank" rel="noopener">
+                    <img src="qr_codes/colab_qr.png" alt="QR code for Colab demo">
+                  </a>
+                  <p>Colab</p>
+                </div>
+                <div class="qr-card">
+                  <a href="https://huggingface.co/spaces/naseer39/ReSAM-app" target="_blank" rel="noopener">
+                    <img src="qr_codes/hf_space_qr.png" alt="QR code for Hugging Face demo">
+                  </a>
+                  <p>Hugging Face</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-<div class="marquee-wrapper">
-	<div class="container">
-		<div class="marquee-block">
-			<div class="marquee-inner to-left">
-				<span>
-					<div class="marquee-item">
-            <img src="static/images/method.png" alt="MY ALT TEXT"/>
-						<p class="text-white">1</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">2</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">3</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">4</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel5.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">5</p>
-					</div>
-				</span>
-				<span>
-					<div class="marquee-item">
-            <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">1</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">2</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">3</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">4</p>
-					</div>
-					<div class="marquee-item">
-            <img src="static/images/carousel5.jpg" alt="MY ALT TEXT"/>
-						<p class="text-white">5</p>
-					</div>
-				</span>
-			</div>
-		</div>
-
-  </div>
-</section> -->
-
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/images/method.png"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Interactive segmentation models such as the Segment Anything Model (SAM) have demonstrated remarkable generalization on natural images, but they perform suboptimally on remote sensing imagery (RSI) due to severe domain shifts and the scarcity of dense annotations. To address this limitation, we propose a point-supervised self-prompting framework that adapts SAM to RSI using only sparse point annotations. Our method employs a Refine–Requery–Reinforce loop, in which coarse pseudo-masks are generated from initial points (Refine), improved with self-constructed box prompts (Requery), and embeddings are aligned for Soft Semantic Alignment to mitigate error propagation. (Reinforce). Without relying on full-mask supervision, our approach progressively enhances SAM's segmentation quality and domain robustness through self-guided prompt adaptation. We evaluate our proposed method on three RSI benchmark datasets, WHU, HRSID, and NWPU VHR-10, showing that our method consistently surpasses pretrained SAM and recent point-supervised segmentation methods. Our results demonstrate that self-prompting and semantic alignment provide an efficient path towards scalable, point-level adaptation of foundation segmentation models for remote sensing applications.
-          </p>
-        </div>
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body" style="padding-top: 0;">
+        <figure class="figure-block">
+          <img src="static/images/method.png" alt="Overview of the ReSAM Refine–Requery–Reinforce pipeline">
+          <figcaption class="figure-caption">
+            <b>Figure 1.</b> Overview of ReSAM. Weak views generate pseudo-masks and self-prompts that iteratively refine SAM outputs through <b>Refine</b> (mask cleaning), <b>Requery</b> (self-prompting with box prompts), and <b>Reinforce</b> (Soft Semantic Alignment with LoRA), while the strong view provides training supervision.
+          </figcaption>
+        </figure>
       </div>
     </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+  </section>
 
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/method.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Overview of ReSAM. .
-        </h2>
-      </div>
-      <!-- <div class="item">
-
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div> -->
-     <div class="item">
-
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      
-      <h2 class="title is-3">Video Presentation</h2>
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Interactive segmentation models such as the Segment
+Anything Model (SAM) have demonstrated remarkable
+generalization on natural images, but they perform suboptimally on remote sensing imagery (RSI) due to severe domain shifts and the scarcity of dense annotations. To address this limitation, we propose a pointsupervised, self-prompting framework that adapts SAM
+to RSI using only sparse point annotations. Our
+method employs a Refine–Requery–Reinforce loop, in
+which coarse pseudo-masks are generated from initial points (Refine), improved with self-constructed box
+prompts (Requery), and embeddings are aligned with
+Soft Semantic Alignment (SSA) to mitigate error propagation (Reinforce). Without relying on full-mask supervision, our approach progressively enhances SAM’s
+segmentation quality and domain robustness through
+self-guided prompt adaptation. We evaluate our proposed method on three RSI benchmark datasets, WHU,
+HRSID, and NWPU VHR-10, demonstrating that it consistently outperforms pretrained SAM and recent pointsupervised segmentation methods. Compared to the
+fully supervised model, our approach reduces the performance gap to 1.3% (WHU), 4.9% (HRSID), and 8.5%
+(NWPU) while relying only on 1-point annotations. Our
+results demonstrate that self-prompting and semantic
+alignment provide an efficient path towards scalable,
+point-level adaptation of foundation segmentation models for remote sensing applications
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
+  </section>
 
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-       
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-
-<!-- Paper poster 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
+  <section class="section">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">Contributions</h2>
+      <ul class="contribution-list">
+        <li><b>ReSAM</b> — A point-supervised self-prompting framework that refines pseudo-masks by suppressing overlaps, converts sparse points into box prompts via a closed-loop $\mathrm{R}^3$ strategy, and removes the need for dense supervision.</li>
+        <li><b>Soft Semantic Alignment (SSA)</b> — Aligns mask embeddings with a rolling queue and cosine similarity, ensuring semantic consistency without the memory cost of large prototype banks.</li>
+        <li><b>Strong RSI benchmarks</b> — Consistent gains on WHU, HRSID, and NWPU VHR-10 over vanilla SAM and prior point-supervised methods, with up to <b>84%</b> lower training memory than prototype-based PointSAM.</li>
+      </ul>
     </div>
   </section>
-End paper poster -->
 
+  <section class="section hero is-light">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <p class="has-text-justified">
+        ReSAM adapts SAM with LoRA on the image encoder and operates on weak–strong dual views. Given sparse positive point prompts on a weakly augmented image, SAM produces initial instance masks. In the <b>Refine</b> stage, confident pixels are selected via entropy filtering and overlapping regions are removed so each pixel belongs to a single instance. In <b>Requery</b>, minimal bounding boxes from refined masks are used as self-generated prompts to obtain higher-quality pseudo labels. In <b>Reinforce</b>, SSA aligns instance embeddings from weak and strong views using FIFO queues and a soft cosine loss, combined with focal, Dice, and IoU losses for mask quality.
+      </p>
+    </div>
+  </section>
 
-<!--BibTex citation -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+      <p class="content has-text-justified is-size-6">
+        ReSAM is evaluated on three RSI benchmarks with 1-, 2-, and 3-point supervision per instance. Results below report SAM-based backbones (1-point setting highlighted in the paper). ReSAM surpasses PointSAM and other baselines across datasets, with steady gains as more points are provided.
+      </p>
+
+      <figure class="figure-block">
+        <img src="static/images/quantitative_result_nwpu.png" alt="Quantitative results on NWPU VHR-10">
+        <figcaption class="figure-caption"><b>NWPU VHR-10.</b> Comparison with point-supervised and adaptation baselines (SAM backbone).</figcaption>
+      </figure>
+      <figure class="figure-block">
+        <img src="static/images/quantitative_result_whu.png" alt="Quantitative results on WHU building dataset">
+        <figcaption class="figure-caption"><b>WHU.</b> Building instance segmentation under sparse point supervision.</figcaption>
+      </figure>
+      <figure class="figure-block">
+        <img src="static/images/quantitative_result_hrsid.png" alt="Quantitative results on HRSID inshore dataset">
+        <figcaption class="figure-caption"><b>HRSID-Inshore.</b> SAR ship instance segmentation in cluttered coastal scenes.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
+      <p class="content has-text-justified is-size-6">
+        Each component of the $\mathrm{R}^3$ loop contributes to overlap suppression and stable pseudo labels. On WHU with 1-point prompts, full ReSAM reaches <b>75.8% mIoU</b> (+14.8 over direct SAM). SSA with queue size 128 improves training stability and final accuracy on NWPU and HRSID compared to training without SSA.
+      </p>
+
+      <figure class="figure-block">
+        <img src="static/images/ablation.png" alt="Ablation of ReSAM components on WHU">
+        <figcaption class="figure-caption"><b>Component ablation (WHU, 1-point).</b> Self-training, requerying, and SSA each improve over the direct SAM baseline.</figcaption>
+      </figure>
+      <figure class="figure-block">
+        <img src="static/images/ablation_effect.png" alt="Effect of Soft Semantic Alignment across training">
+        <figcaption class="figure-caption"><b>SSA ablation.</b> SSA stabilizes training and improves final mIoU on NWPU VHR-10 and HRSID.</figcaption>
+      </figure>
+      <figure class="figure-block">
+        <img src="static/images/memory_ablation.png" alt="GPU memory comparison between PointSAM and ReSAM">
+        <figcaption class="figure-caption"><b>Memory efficiency.</b> ReSAM reduces average GPU memory during training by up to 84% compared to prototype-based PointSAM.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{subhani2025resam,
-        title={ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images},
-        author={Subhani, M Naseer},
-        journal={arXiv preprint arXiv:2511.21606},
-        year={2025}
-      }</code></pre>
+      <h2 class="title is-3">BibTeX</h2>
+      <pre><code>@inproceedings{subhani2026resam,
+  title={ReSAM: Refine, Requery, and Reinforce: Self-Prompting Point-Supervised Segmentation for Remote Sensing Images},
+  author={Subhani, Muhammad Naseer},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</code></pre>
+      <p class="is-size-7 has-text-grey">
+        Preprint: <code>@article{subhani2025resam, ... journal={arXiv preprint arXiv:2511.21606}, year={2025}}</code>
+      </p>
     </div>
-</section>
-<!--End BibTex citation -->
-
+  </section>
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/vinthony/project-page-template">modification version</a> of <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> from <a href="https://github.com/vinthony">vinthony</a>.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Page template adapted from
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>.
+              Licensed under
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>

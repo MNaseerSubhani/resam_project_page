@@ -342,3 +342,66 @@ a:hover:after{
 .header a{
   color:white;
 }
+
+.qr-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.qr-card {
+  text-align: center;
+  max-width: 160px;
+}
+
+.qr-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  padding: 6px;
+  background: #fff;
+}
+
+.qr-card p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.figure-block {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.figure-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #eee;
+}
+
+.figure-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+}
+
+.contribution-list li {
+  margin-bottom: 0.5rem;
+}
+
+.venue-badge {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  background: #f5f5f5;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
